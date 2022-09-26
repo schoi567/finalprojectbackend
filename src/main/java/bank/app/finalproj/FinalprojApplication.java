@@ -14,8 +14,8 @@ import bank.app.finalproj.CreateSchema;
 public class FinalprojApplication {
   
 	public static void main(String[] args) throws SQLException {
-	  CreateSchema CS = new CreateSchema(); 
-  CS.Startdb(); 
+	//  CreateSchema CS = new CreateSchema(); 
+ // CS.Startdb(); 
 		SpringApplication.run(FinalprojApplication.class, args);
 	}
 
