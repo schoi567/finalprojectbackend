@@ -1,34 +1,25 @@
-version: "3.8"
+version: "3"
 services:
-  mysqldb:
-    image: mysql1
-    restart: unless-stopped
-    env_file: ./.env
-    environment:
-      - MYSQL_ROOT_PASSWORD=12346578
-      - MYSQL_DATABASE=bank
+  server:
+    image: backend
     ports:
-      - 3306:3307
-    volumes:
-      - db:/var/lib/mysql
-  app:
+      - "8080:8080"
+    environment:
+      - spring.datasource.url=jdbc:mysql://mysqldb:3306/bank?useSSL=false
+    networks:
+      - springmysql-net
     depends_on:
-      - bank
-    build: ./finalproj
-    restart: on-failure
-    env_file: ./.env
-    ports:
-      - 8086:8086
+      - mysqldb
+
+  mysqldb:
+    image: mysql:5.7
+    networks:
+      - springmysql-net
     environment:
-      SPRING_APPLICATION_JSON: '{
-        "spring.datasource.url"  : "jdbc:mysql:// mysql-standalonea:3307/bank?useSSL=false",
-        "spring.datasource.username" : "root",
-        "spring.datasource.password" : "12345678",
-        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
-        "spring.jpa.hibernate.ddl-auto" : "update"}'
-    volumes:
-      - .m2:/root/.m2
-    stdin_open: true
-    tty: true
-volumes:
-  db:
+      - MYSQL_ROOT_PASSWORD=12345678
+      - MYSQL_DATABASE=bank
+      - MYSQL_USER=sa
+      - MYSQL_PASSWORD=12345678
+
+networks:
+  springmysql-net:

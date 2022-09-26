@@ -2,10 +2,18 @@
 #ADD target/*.jar app.jar
 #ENTRYPOINT ["java","-jar","app.jar"]
 
+#FROM openjdk:11 
+##ADD target/user-mysql1.jar user-mysql1.jar
+#EXPOSE 8080
+#ENTRYPOINT ["java", "-jar", "user-mysql1.jar"]
+
+
 FROM openjdk:11 
-ADD target/user-mysql1.jar user-mysql1.jar
-EXPOSE 8086
-ENTRYPOINT ["java", "-jar", "user-mysql1.jar"]
+ADD target/backend-0.0.1-SNAPSHOT.jar backend-0.0.1-SNAPSHOT.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "backend-0.0.1-SNAPSHOT.jar"]
+
+
 
 #FROM openjdk:11-jre-slim
 #ADD target/*.user-mysql1.jar user-mysql1.jar
