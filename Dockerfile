@@ -8,10 +8,10 @@
 #ENTRYPOINT ["java", "-jar", "user-mysql1.jar"]
 
 
-FROM openjdk:11 
-ADD target/backend-0.0.1-SNAPSHOT.jar backend-0.0.1-SNAPSHOT.jar
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "backend-0.0.1-SNAPSHOT.jar"]
+#FROM openjdk:11 
+#ADD target/backend-0.0.1-SNAPSHOT.jar backend-0.0.1-SNAPSHOT.jar
+#EXPOSE 8080
+#ENTRYPOINT ["java", "-jar", "backend-0.0.1-SNAPSHOT.jar"]
 
 
 
@@ -26,8 +26,8 @@ ENTRYPOINT ["java", "-jar", "backend-0.0.1-SNAPSHOT.jar"]
 #RUN mvn -f /home/app/pom.xml clean package
 
  
-#FROM openjdk:11-jre-slim
-#COPY --from=build /home/app/target/user-mysql1.jar /usr/local/lib/user-mysql1.jar
-#EXPOSE 8089
-#ENTRYPOINT ["java","-Djava.security.egd=file:dockdev/./urandom","-jar","/usr/local/lib/ user-mysql1.jar"]
+FROM openjdk:11-jre-slim
+COPY --from=build /home/app/target/backend-0.0.1-SNAPSHOT.jar /usr/local/lib/backend-0.0.1-SNAPSHOT.jar
+EXPOSE 8080
+ENTRYPOINT ["java","-Djava.security.egd=file:dockdev/./urandom","-jar","/usr/local/lib/ backend-0.0.1-SNAPSHOT.jar"]
 
