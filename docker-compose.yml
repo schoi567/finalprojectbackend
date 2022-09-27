@@ -12,7 +12,7 @@ services:
       - mysqldb
 
   mysqldb:
-    image: mysql:5.7
+    image: mysql:8.0.29
     networks:
       - springmysql-net
     environment:
