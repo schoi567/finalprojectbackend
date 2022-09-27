@@ -10,10 +10,10 @@ import org.springframework.stereotype.Controller;
 
 import bank.app.finalproj.repository.CustomerRepository;
 
-@Component
-@Controller
+//@Component
+//@Controller
 public class CreateSchema {
- 
+ /*
 	@Autowired
 	CustomerRepository CustomerRepository; 
 	
