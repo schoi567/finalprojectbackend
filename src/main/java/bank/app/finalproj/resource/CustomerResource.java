@@ -24,21 +24,21 @@ import bank.app.finalproj.entity.transfer;
 import bank.app.finalproj.repository.*;
  
 @CrossOrigin(origins={	
-		"http://3.237.7.55:4200/primaryaccounttransfer",
-		"http://3.237.7.55:4200",
-		"http://3.237.7.55:4201",
-		"http://3.237.7.55:4200/uprofile",
-		"http://3.237.7.55:4200/changeusrprof/{username}",
-		"http://3.237.7.55:4200/requestcheck/{username}", 
-		"http://3.237.7.55:4200/checkbook",
-		"http://3.237.7.55:4201/useraccount", 
-		"http://3.237.7.55:4201/changeblock", 
-		"http://3.237.7.55:4201/checkbookrequestdes", 
-	    "http://3.237.7.55:4200/depositwithdraw",
-		"http://3.237.7.55:4200/primaryhistory/{username}",
-		"http://3.237.7.55:4200/primaryaccounttransfer/{username}", 
-		"http://3.237.7.55:4200/savingsaccounttransfer/{username}", 
-		"http://3.237.7.55:4201/transferchange" 
+		"http://3.226.243.189:4200/primaryaccounttransfer",
+		"http://3.226.243.189:4200",
+		"http://18.232.38.151:4201",
+		"http://3.226.243.189:4200/uprofile",
+		"http://3.226.243.189:4200/changeusrprof/{username}",
+		"http://3.226.243.189:4200/requestcheck/{username}", 
+		"http://3.226.243.189:4200/checkbook",
+		"http://18.232.38.151:4201/useraccount", 
+		"http://18.232.38.151:4201/changeblock", 
+		"http://18.232.38.151:4201/checkbookrequestdes", 
+	    "http://3.226.243.189:4200/depositwithdraw",
+		"http://3.226.243.189:4200/primaryhistory/{username}",
+		"http://3.226.243.189:4200/primaryaccounttransfer/{username}", 
+		"http://3.226.243.189:4200/savingsaccounttransfer/{username}", 
+		"http://18.232.38.151:4201/transferchange" 
 		
 	 
 	 
